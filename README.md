@@ -1,2 +1,3 @@
 # SpaceShooterv2
- ñlkasjdfpoiwhet
+FPS in the space. A project for the Unity course.
+
