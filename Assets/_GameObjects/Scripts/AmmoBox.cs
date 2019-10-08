@@ -11,7 +11,7 @@ public class AmmoBox : MonoBehaviour
         {
             print("More ammo for ya");
             //We recharge the ammo of the player
-            other.gameObject.GetComponent<Player1>().toRecharge(boxAmmoNum);
+            //other.gameObject.GetComponent<Player1>().toRecharge(boxAmmoNum);
             //We destroy the box, so its not used again
             Destroy(gameObject);
         }

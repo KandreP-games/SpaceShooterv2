@@ -55,6 +55,7 @@ MonoBehaviour:
   hpText: {fileID: 1814758201242448091}
   delay: 0
   speed: 4
+  timeBetweenRotation: 0
 --- !u!54 &2953297761502813591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -108,6 +109,7 @@ GameObject:
   - component: {fileID: 4234895730467538761}
   - component: {fileID: 6859026934656131693}
   - component: {fileID: 1814758201242448091}
+  - component: {fileID: 8618078882936839808}
   m_Layer: 0
   m_Name: HpText
   m_TagString: Untagged
@@ -123,7 +125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9012602466851724423}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.24, y: 2.88, z: 0.06071472}
+  m_LocalPosition: {x: 0.197, y: 2.88, z: 0.06071472}
   m_LocalScale: {x: 0.011173975, y: 0.011173975, z: 0.011173975}
   m_Children: []
   m_Father: {fileID: 1126170997340041116}
@@ -180,7 +182,7 @@ TextMesh:
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 200
   m_FontStyle: 0
@@ -189,6 +191,18 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &8618078882936839808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9012602466851724423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06fa8f2d88362c54aae04766ac2a7e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7446547217759002545
 PrefabInstance:
   m_ObjectHideFlags: 0

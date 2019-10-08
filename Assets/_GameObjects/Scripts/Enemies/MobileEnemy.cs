@@ -5,10 +5,11 @@ using UnityEngine;
 public class MobileEnemy : Enemies
 {
     [SerializeField] float speed;
+    [SerializeField] float timeBetweenRotation;
     private void Start()
     {
         base.Start();
-        InvokeRepeating("toRotate", Random.Range(0.5f, 5), Random.Range(0.5f, 5));
+        InvokeRepeating("toRotate", timeBetweenRotation, timeBetweenRotation);
     }
     private void Update()
     {
