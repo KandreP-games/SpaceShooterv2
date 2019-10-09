@@ -496,6 +496,52 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
+        type: 3}
+      propertyPath: acShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: 072739becb2ea0e40841ce77439194b9, type: 3}
+    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
+        type: 3}
+      propertyPath: acRecharge
+      value: 
+      objectReference: {fileID: 8300000, guid: 42f498d2ab5c1d14c8ba27c3eb605243, type: 3}
+    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
+        type: 3}
+      propertyPath: acFail
+      value: 
+      objectReference: {fileID: 8300000, guid: 5bc4300cee02f0649856ee200977fd88, type: 3}
+    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 6863141897853673747, guid: 638670ef271520844a7e07d046ea1a0a,
+        type: 3}
+    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
+        type: 3}
+      propertyPath: cadence
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
+        type: 3}
+      propertyPath: ammoTxt
+      value: 
+      objectReference: {fileID: 1324085528}
+    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
+        type: 3}
+      propertyPath: chargerTxt
+      value: 
+      objectReference: {fileID: 1280968415}
+    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
+        type: 3}
+      propertyPath: force
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
+        type: 3}
+      propertyPath: chargersLeft
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4464633621268902258, guid: b52b09b1e35d6f545acfda5915cc7079,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -551,42 +597,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
-        type: 3}
-      propertyPath: acShoot
-      value: 
-      objectReference: {fileID: 8300000, guid: 072739becb2ea0e40841ce77439194b9, type: 3}
-    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
-        type: 3}
-      propertyPath: acRecharge
-      value: 
-      objectReference: {fileID: 8300000, guid: 42f498d2ab5c1d14c8ba27c3eb605243, type: 3}
-    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
-        type: 3}
-      propertyPath: acFail
-      value: 
-      objectReference: {fileID: 8300000, guid: 5bc4300cee02f0649856ee200977fd88, type: 3}
-    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
-        type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 6863141897853673747, guid: 638670ef271520844a7e07d046ea1a0a,
-        type: 3}
-    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
-        type: 3}
-      propertyPath: cadence
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
-        type: 3}
-      propertyPath: ammoTxt
-      value: 
-      objectReference: {fileID: 1324085528}
-    - target: {fileID: 417833771562552129, guid: b52b09b1e35d6f545acfda5915cc7079,
-        type: 3}
-      propertyPath: chargerTxt
-      value: 
-      objectReference: {fileID: 1280968415}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b52b09b1e35d6f545acfda5915cc7079, type: 3}
 --- !u!20 &324105694 stripped
@@ -1377,6 +1387,10 @@ PrefabInstance:
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_FootstepSounds.Array.data[1]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
@@ -2184,7 +2198,7 @@ MonoBehaviour:
   prefabSpawned: {fileID: 4362495500527774030, guid: 0988894eb7dcde9479606414e077b0f4,
     type: 3}
   spawnDelay: 2
-  limitSpawned: 3
+  limitSpawned: 20
 --- !u!1 &1402166032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,8 +2257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabSpawned: {fileID: 4362495500527774030, guid: 0988894eb7dcde9479606414e077b0f4,
     type: 3}
-  spawnDelay: 0
-  limitSpawned: 0
+  spawnDelay: 2
+  limitSpawned: 20
 --- !u!114 &1454608726 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
@@ -2488,8 +2502,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabSpawned: {fileID: 4362495500527774030, guid: 0988894eb7dcde9479606414e077b0f4,
     type: 3}
-  spawnDelay: 0
-  limitSpawned: 0
+  spawnDelay: 2
+  limitSpawned: 20
 --- !u!1001 &1717318443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2594,6 +2608,36 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
+        type: 3}
+      propertyPath: acShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b312cab7ab754541892fa0dd5e0054f, type: 3}
+    - target: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
+        type: 3}
+      propertyPath: acRecharge
+      value: 
+      objectReference: {fileID: 8300000, guid: 42f498d2ab5c1d14c8ba27c3eb605243, type: 3}
+    - target: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
+        type: 3}
+      propertyPath: acFail
+      value: 
+      objectReference: {fileID: 8300000, guid: 5bc4300cee02f0649856ee200977fd88, type: 3}
+    - target: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
+        type: 3}
+      propertyPath: ammoTxt
+      value: 
+      objectReference: {fileID: 1324085528}
+    - target: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
+        type: 3}
+      propertyPath: chargerTxt
+      value: 
+      objectReference: {fileID: 1280968415}
+    - target: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
+        type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 324105694}
     - target: {fileID: 7815493149872600932, guid: 91c82f4e3510b134b879d1cb49d3e733,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2649,36 +2693,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
-        type: 3}
-      propertyPath: acShoot
-      value: 
-      objectReference: {fileID: 8300000, guid: 9b312cab7ab754541892fa0dd5e0054f, type: 3}
-    - target: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
-        type: 3}
-      propertyPath: acRecharge
-      value: 
-      objectReference: {fileID: 8300000, guid: 42f498d2ab5c1d14c8ba27c3eb605243, type: 3}
-    - target: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
-        type: 3}
-      propertyPath: acFail
-      value: 
-      objectReference: {fileID: 8300000, guid: 5bc4300cee02f0649856ee200977fd88, type: 3}
-    - target: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
-        type: 3}
-      propertyPath: ammoTxt
-      value: 
-      objectReference: {fileID: 1324085528}
-    - target: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
-        type: 3}
-      propertyPath: chargerTxt
-      value: 
-      objectReference: {fileID: 1280968415}
-    - target: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
-        type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 324105694}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91c82f4e3510b134b879d1cb49d3e733, type: 3}
 --- !u!1 &1822930133
