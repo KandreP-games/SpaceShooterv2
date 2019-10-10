@@ -5,34 +5,50 @@ using UnityEngine;
 public class Enemies : MonoBehaviour
 {
     [SerializeField] int hp;
-    [SerializeField] int damage;
+    [SerializeField] protected int damage;
     [SerializeField] GameObject prefabExplosion;
     [SerializeField] TextMesh hpText;
     [SerializeField] float delay;
-    public void Start()
+    public static bool powerUpEffect = false;
+
+    protected GameObject player;
+
+    protected enum ESTADO { Normal, Siguiendo};
+    protected ESTADO estado = ESTADO.Normal;
+
+
+    protected void Start()
     {
         hpText.text = hp.ToString();
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+    protected void Update()
+    {
+        if (powerUpEffect)
+        {
+            ToTakeDamage(50);
+        }
+    }
+    private void LateUpdate()
+    {
+        powerUpEffect = false;
     }
 
-    public void toTakeDamage(int damageTaken)
+    public void ToTakeDamage(int damageTaken)
     {
         hp -= damageTaken;
         hpText.text = hp.ToString();
         if (hp <= 0)
         {
-            toDie();
+            ToDie();
         }
     }
-    private void toAttack()
-    {
-
-    }
-    private void toDie()
+    protected void ToDie()
     {
         Instantiate(prefabExplosion, transform.position, transform.rotation);
-        Invoke("toDestroy", 0);
+        Invoke("ToDestroy", 0);
     }
-    private void toDestroy()
+    private void ToDestroy()
     {
         Destroy(gameObject);
     }

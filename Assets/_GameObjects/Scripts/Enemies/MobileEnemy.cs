@@ -9,14 +9,31 @@ public class MobileEnemy : Enemies
     private void Start()
     {
         base.Start();
+        Invoke("ToRotate", timeBetweenRotation);
     }
-    public void Update()
+    protected void Update()
     {
-        toMove();
+        base.Update();
+        ToMove();
     }
-    private void toMove()
+    protected void ToMove()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }   
-
+    protected void ToRotate()
+    {
+        if (estado != ESTADO.Siguiendo)
+        {
+            transform.Rotate(0, Random.Range(0, 360), 0);
+        }
+    }
+    protected void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Player")
+        {
+            print("Collision Player");
+            ToDie();
+            collision.gameObject.GetComponent<Player1>().ToTakeDamage(damage);
+        }
+    }
 }

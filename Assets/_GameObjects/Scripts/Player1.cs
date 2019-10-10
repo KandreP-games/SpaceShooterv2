@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player1 : MonoBehaviour
 {
     [SerializeField] Gun[] guns;
     [SerializeField] int activeGun = 0;
     private bool keyDown;
+    [SerializeField] int playerHp = 100;
+    [SerializeField] Text hpText;
 
     private void Update()
     {
+        hpText.text = playerHp.ToString();
         if (Input.GetMouseButton(0))
         {
             ToTrigger();
@@ -35,14 +39,22 @@ public class Player1 : MonoBehaviour
         }
 
     }
+
     public void ToRecharge()
     {
         guns[activeGun].ToRecharge();
     }
+
     void ToTrigger()
     { 
         guns[activeGun].TryShoot();
     }
+
+    public void ToTakeDamage(int damage)
+    {
+        playerHp -= damage;
+    }
+
     //Función cambiar de arma
     void ChangeGun(int gunNumber)
     {
