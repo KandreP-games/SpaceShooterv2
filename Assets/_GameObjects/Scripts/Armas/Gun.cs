@@ -40,7 +40,6 @@ public abstract class Gun : MonoBehaviour
     }
     public void TryShoot()
     {
-        print("TryShoot");
         bool canShoot = ammoLeft > 0 && charging == false && waitingCadence == false;
         if (canShoot)
         {

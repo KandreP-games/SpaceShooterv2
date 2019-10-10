@@ -9,9 +9,8 @@ public class MobileEnemy : Enemies
     private void Start()
     {
         base.Start();
-        InvokeRepeating("toRotate", timeBetweenRotation, timeBetweenRotation);
     }
-    private void Update()
+    public void Update()
     {
         toMove();
     }
@@ -19,8 +18,5 @@ public class MobileEnemy : Enemies
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }   
-    private void toRotate()
-    {
-        transform.Rotate(0, Random.Range(0, 360), 0);
-    }
+
 }
