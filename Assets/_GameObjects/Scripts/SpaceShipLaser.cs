@@ -10,7 +10,7 @@ public class SpaceShipLaser : MonoBehaviour
     [SerializeField] AudioSource laserSound;
     private void Start()
     {
-        InvokeRepeating("ToShoot", 5, Random.Range(0.1f, 3f));
+        InvokeRepeating("ToShoot", 5, Random.Range(0.1f, 3f)*Time.deltaTime*50);
     }
     private void ToShoot()
     {
