@@ -26,6 +26,13 @@ public class BioDomeBehaviour : MonoBehaviour
             GameManager.isInside = !GameManager.isInside;
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.name == "Player")
+        {
+            GameManager.isInside = !GameManager.isInside;
+        }
+    }
 
 
 }

@@ -5,11 +5,12 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public abstract class Gun : MonoBehaviour
 {   
+    
     [Header("Time in between each shot(s)")]
-    [Range(0f,10f)]
+    [Range(0f, 10f)]
     [SerializeField] float cadence; //Tiempo entre disparo y disparo
     [Header("Time that is spent in recharging (s)")]
-    [Range(1f, 4f)]
+    [Range(0f, 4f)]
     [SerializeField] float rechargeTime;
     [Space(30)]
     [Header("Charger capacity")]
@@ -25,6 +26,7 @@ public abstract class Gun : MonoBehaviour
     private AudioSource audioSource;
     public bool charging;
     public bool waitingCadence; //Time between each shot (cadence)
+    
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -79,5 +81,9 @@ public abstract class Gun : MonoBehaviour
     private void ChargingFinished()
     {
         charging = false;
+    }
+    public void TakeAmmo(int ammoAdded)
+    {
+        chargersLeft += ammoAdded;
     }
 }

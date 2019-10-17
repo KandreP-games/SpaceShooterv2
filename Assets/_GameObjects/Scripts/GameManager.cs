@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,20 +12,27 @@ public class GameManager : MonoBehaviour
     {
         numberEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
         GameManager.isInside = false;
+
     }
 
     private void Update()
     {
         StartCoroutine("EnemyCounter");
+
     }
 
     IEnumerator EnemyCounter()
     {
         numberEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if(numberEnemies <= 0)
+        if (numberEnemies <= 0)
         {
             waveNumber += 1;
         }
         yield return null;
+    }
+
+    public void DeathEvent()
+    {
+        SceneManager.LoadScene(2);
     }
 }

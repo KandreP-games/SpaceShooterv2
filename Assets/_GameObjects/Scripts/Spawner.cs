@@ -11,23 +11,18 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     /*   while (n < limitSpawned)
-        {
-            n++;
-            toSpawn();
-        }*/
         //Invocar el método toSpawn(), en el segundo 0 en que se instacia el objeto en un intervalo entre spawn y spawn de spawnDelay segundos
         InvokeRepeating("toSpawn", 0, spawnDelay);
     }
     
     private void toSpawn()
     {
-        n++;
-        Instantiate(prefabSpawned, transform);
-        transform.DetachChildren();
-        if (n == limitSpawned)
+        if (n >= limitSpawned)
         {
             CancelInvoke();
         }
+        n++;
+        Instantiate(prefabSpawned, transform);
+        transform.DetachChildren();
     }
 }

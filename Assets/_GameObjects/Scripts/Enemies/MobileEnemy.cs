@@ -6,6 +6,7 @@ public class MobileEnemy : Enemies
 {
     [SerializeField] float speed;
     [SerializeField] float timeBetweenRotation;
+    [SerializeField] protected int damage;
     private void Start()
     {
         base.Start();
@@ -31,9 +32,8 @@ public class MobileEnemy : Enemies
     {
         if (collision.gameObject.name == "Player")
         {
-            print("Collision Player");
             ToDie();
-            collision.gameObject.GetComponent<Player1>().ToTakeDamage(damage);
+            collision.gameObject.GetComponent<Player1>().ChangeLife(damage);
         }
     }
 }

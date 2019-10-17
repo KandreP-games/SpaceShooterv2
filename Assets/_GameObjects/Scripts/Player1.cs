@@ -38,6 +38,7 @@ public class Player1 : MonoBehaviour
             ChangeGun(3);
         }
 
+        Death();
     }
 
     public void ToRecharge()
@@ -49,10 +50,13 @@ public class Player1 : MonoBehaviour
     { 
         guns[activeGun].TryShoot();
     }
-
-    public void ToTakeDamage(int damage)
+    public void TakeAmmo(int addedAmmo)
     {
-        playerHp -= damage;
+        guns[activeGun].TakeAmmo(addedAmmo);
+    }
+    public void ChangeLife(int lifeChanged)
+    {
+        playerHp += lifeChanged;
     }
 
     //Función cambiar de arma
@@ -69,5 +73,12 @@ public class Player1 : MonoBehaviour
             //Activa el arma elegida
             guns[activeGun].gameObject.SetActive(true);
         }        
+    }
+    private void Death()
+    {
+        if(playerHp <= 0)
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().DeathEvent();
+        }
     }
 }

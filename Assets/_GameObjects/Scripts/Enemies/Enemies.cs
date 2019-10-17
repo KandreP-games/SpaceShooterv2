@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemies : MonoBehaviour
 {
     [SerializeField] int hp;
-    [SerializeField] protected int damage;
     [SerializeField] GameObject prefabExplosion;
     [SerializeField] TextMesh hpText;
     [SerializeField] float delay;

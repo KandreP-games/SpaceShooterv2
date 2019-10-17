@@ -288,13 +288,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  damage: 20
   prefabExplosion: {fileID: 1247311384876784, guid: 4adffb0018aeda44e9263f901167af1f,
     type: 3}
   hpText: {fileID: 7408038340606939496}
   delay: 2
   speed: 7
   timeBetweenRotation: 2
+  damage: -20
   followDistance: 10
 --- !u!1 &33348204315714062
 GameObject:
