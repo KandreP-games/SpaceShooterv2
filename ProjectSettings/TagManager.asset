@@ -8,6 +8,7 @@ TagManager:
   - FxTemporaire
   - Enemy
   - EnemyObjective
+  - GameManager
   layers:
   - Default
   - TransparentFX

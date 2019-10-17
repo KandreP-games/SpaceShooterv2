@@ -193,6 +193,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7389606690636573248, guid: eccbb06326676d74582703ed0e03065f,
+        type: 3}
+      propertyPath: degreesPerSecond
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389606690636573248, guid: eccbb06326676d74582703ed0e03065f,
+        type: 3}
+      propertyPath: amplitude
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eccbb06326676d74582703ed0e03065f, type: 3}
 --- !u!1001 &64483623
@@ -1966,6 +1976,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a89986cb5943104b935e67fa6adff7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  degreesPerSecond: 15
+  amplitude: 0.5
+  frequency: 1
 --- !u!4 &293219534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4705296625292898, guid: c5bfdd27eed2933428cacc51558d4f14,
@@ -2789,6 +2802,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a89986cb5943104b935e67fa6adff7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  degreesPerSecond: 0
+  amplitude: 0.5
+  frequency: 1
 --- !u!1001 &563881526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4804,7 +4820,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17922
+  m_Name: pb_Mesh49828
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5205,6 +5221,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389606690636573248, guid: eccbb06326676d74582703ed0e03065f,
+        type: 3}
+      propertyPath: degreesPerSecond
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389606690636573248, guid: eccbb06326676d74582703ed0e03065f,
+        type: 3}
+      propertyPath: amplitude
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eccbb06326676d74582703ed0e03065f, type: 3}
@@ -5792,7 +5818,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17826
+  m_Name: pb_Mesh49730
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7140,7 +7166,7 @@ MonoBehaviour:
   prefabSpawned: {fileID: 4362495500527774030, guid: 0988894eb7dcde9479606414e077b0f4,
     type: 3}
   spawnDelay: 2
-  limitSpawned: 0
+  limitSpawned: 1
 --- !u!1 &1377146409
 GameObject:
   m_ObjectHideFlags: 0
@@ -7446,7 +7472,7 @@ MonoBehaviour:
   prefabSpawned: {fileID: 4362495500527774030, guid: 0988894eb7dcde9479606414e077b0f4,
     type: 3}
   spawnDelay: 2
-  limitSpawned: 0
+  limitSpawned: 1
 --- !u!114 &1454608726 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8228267906781336626, guid: 91c82f4e3510b134b879d1cb49d3e733,
@@ -7745,7 +7771,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17626
+  m_Name: pb_Mesh49524
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8298,7 +8324,7 @@ GameObject:
   - component: {fileID: 1744504923}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8342,9 +8368,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d3bef16318d9c4c8224c8cc0cb0fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBoxPrefab: {fileID: 0}
-  powerUpPrefab: {fileID: 0}
-  enemyDamagePrefab: {fileID: 0}
+  healthBoxPrefab: {fileID: 8565425278659695479, guid: d0d57c12928bfa04a9ab5767783b2332,
+    type: 3}
+  powerUpPrefab: {fileID: 8565425278659695479, guid: fdcce9b7c8527c24392fb1a23dd73894,
+    type: 3}
+  ammoBoxPrefab: {fileID: 8565425278659695479, guid: e0c0973a6ffdc124da8e8b7d78eaa974,
+    type: 3}
 --- !u!1001 &1817174772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14570,6 +14599,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a89986cb5943104b935e67fa6adff7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  degreesPerSecond: 0
+  amplitude: 0.5
+  frequency: 1
 --- !u!1 &1978418420 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013289884710, guid: f0cf8146888c5ba4ebd406d6a76baeb7,
@@ -19903,7 +19935,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18060
+  m_Name: pb_Mesh49968
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20246,6 +20278,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389606690636573248, guid: eccbb06326676d74582703ed0e03065f,
+        type: 3}
+      propertyPath: degreesPerSecond
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389606690636573248, guid: eccbb06326676d74582703ed0e03065f,
+        type: 3}
+      propertyPath: amplitude
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eccbb06326676d74582703ed0e03065f, type: 3}

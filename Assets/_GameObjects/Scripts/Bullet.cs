@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] int damage;
+    private static int damage = 20;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -21,5 +21,9 @@ public class Bullet : MonoBehaviour
     private void DestroyBullet()
     {
         Destroy(gameObject);
+    }
+    public static void ToPowerUp(int addedDamage)
+    {
+        damage += addedDamage;
     }
 }

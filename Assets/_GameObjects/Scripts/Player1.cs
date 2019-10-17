@@ -29,14 +29,14 @@ public class Player1 : MonoBehaviour
         {
             ChangeGun(1);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        /*else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             ChangeGun(2);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             ChangeGun(3);
-        }
+        }*/
 
         Death();
     }

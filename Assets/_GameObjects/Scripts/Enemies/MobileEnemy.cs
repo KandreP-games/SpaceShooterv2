@@ -7,6 +7,9 @@ public class MobileEnemy : Enemies
     [SerializeField] float speed;
     [SerializeField] float timeBetweenRotation;
     [SerializeField] protected int damage;
+    private bool isMoving = true;
+    private bool isInsideDome = false;
+    private GameObject touchingDome;
     private void Start()
     {
         base.Start();
@@ -15,7 +18,10 @@ public class MobileEnemy : Enemies
     protected void Update()
     {
         base.Update();
-        ToMove();
+        if (isMoving)
+        {
+            ToMove();
+        }
     }
     protected void ToMove()
     {
@@ -28,12 +34,32 @@ public class MobileEnemy : Enemies
             transform.Rotate(0, Random.Range(0, 360), 0);
         }
     }
+    public void ToStop()
+    {
+        isMoving = false;
+    }
     protected void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Player")
         {
             ToDie();
             collision.gameObject.GetComponent<Player1>().ChangeLife(damage);
+        }
+    }
+    public void ChangeDomeStatus()
+    {
+        isInsideDome = !isInsideDome;
+        GetComponent<Rigidbody>().isKinematic = true;
+    }
+    public void ReferenceDome(GameObject gameObject)
+    {
+        touchingDome = gameObject;
+    }
+    private void OnDestroy()
+    {
+        if (isInsideDome)
+        {
+            touchingDome.GetComponent<BioDomeBehaviour>().OneLessEnemy();
         }
     }
 }

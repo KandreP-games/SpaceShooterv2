@@ -26,6 +26,7 @@ public abstract class Gun : MonoBehaviour
     private AudioSource audioSource;
     public bool charging;
     public bool waitingCadence; //Time between each shot (cadence)
+    public bool powerUp = false;
     
     private void Start()
     {
@@ -85,5 +86,9 @@ public abstract class Gun : MonoBehaviour
     public void TakeAmmo(int ammoAdded)
     {
         chargersLeft += ammoAdded;
+    }
+    public void ToPowerUp()
+    {
+        powerUp = true;
     }
 }

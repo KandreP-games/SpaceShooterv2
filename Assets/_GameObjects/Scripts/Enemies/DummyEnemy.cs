@@ -11,25 +11,28 @@ public class DummyEnemy : MobileEnemy
     {
         base.Start();
         objectives = GameObject.FindGameObjectsWithTag("EnemyObjective");
+        FindTarget();
     }
     private void Update()
     {
         base.Update();
-        FindTarget();
         transform.LookAt(objectives[j].transform);
     }
     private void FindTarget()
     {
-        List<float> distances = new List<float>();
+        // This function is to go to the nearest objective
+        /*List<float> distances = new List<float>();
         for (int i = 0; i < objectives.Length; i++)
         {
            distances.Add(Vector3.Distance(objectives[i].transform.position, transform.position));
         }
-        j = distances.IndexOf(distances.Min());   
+        j = distances.IndexOf(distances.Min());*/
+        //This other is to go to a random objective
+         j = Random.Range(0, 3);
     }
-    public void HouseDamage()
+    /*public void HouseDamage()
     {
         transform.Translate(0, 0, 0);
 
-    }
+    }*/
 }

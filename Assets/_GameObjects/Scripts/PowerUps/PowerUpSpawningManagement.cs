@@ -6,22 +6,22 @@ public class PowerUpSpawningManagement : MonoBehaviour
 {
     [SerializeField] GameObject healthBoxPrefab;
     [SerializeField] GameObject powerUpPrefab;
-    [SerializeField] GameObject enemyDamagePrefab;
+    [SerializeField] GameObject ammoBoxPrefab;
 
-    public enum PowerUpToSpawn {healthBox, powerUp, enemyDamage}
+    public enum PowerUpToSpawn {healthBox, powerUp, ammoBox}
 
 public void ToSpawn(PowerUpToSpawn powerUpToSpawn, Transform enemyKilledTransform)
     {
         switch(powerUpToSpawn)
         {
             case PowerUpToSpawn.healthBox:
-                Instantiate(healthBoxPrefab, enemyKilledTransform.position, enemyKilledTransform.rotation);
+                Instantiate(healthBoxPrefab, enemyKilledTransform.position + new Vector3(0,1,0) , Quaternion.Euler(45,45,45));
                 break;
             case PowerUpToSpawn.powerUp:
-                Instantiate(powerUpPrefab, enemyKilledTransform.position, enemyKilledTransform.rotation);
+                Instantiate(powerUpPrefab, enemyKilledTransform.position + new Vector3(0, 1, 0), Quaternion.Euler(45, 45, 45));
                 break;
-            case PowerUpToSpawn.enemyDamage:
-                Instantiate(enemyDamagePrefab, enemyKilledTransform.position, enemyKilledTransform.rotation);
+            case PowerUpToSpawn.ammoBox:
+                Instantiate(ammoBoxPrefab, enemyKilledTransform.position + new Vector3(0, 1, 0), Quaternion.Euler(45, 45, 45));
                 break;
         }
     }
