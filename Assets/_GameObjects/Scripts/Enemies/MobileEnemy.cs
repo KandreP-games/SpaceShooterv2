@@ -9,7 +9,7 @@ public class MobileEnemy : Enemies
     [SerializeField] protected int damage;
     private bool isMoving = true;
     private bool isInsideDome = false;
-    private GameObject touchingDome;
+    protected GameObject touchingDome;
     private void Start()
     {
         base.Start();
@@ -21,6 +21,11 @@ public class MobileEnemy : Enemies
         if (isMoving)
         {
             ToMove();
+        }
+        if(touchingDome == null)
+        {
+            GetComponent<Rigidbody>().isKinematic = false;
+            isMoving = true;
         }
     }
     protected void ToMove()

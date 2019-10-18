@@ -17,6 +17,10 @@ public class DummyEnemy : MobileEnemy
     {
         base.Update();
         transform.LookAt(objectives[j].transform);
+        if (touchingDome == null)
+        {
+            FindTarget();
+        }
     }
     private void FindTarget()
     {

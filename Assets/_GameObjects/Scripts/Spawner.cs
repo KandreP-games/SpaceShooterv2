@@ -4,25 +4,47 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] GameObject prefabSpawned;
+    [SerializeField] GameObject prefabEnemy1;
+    [SerializeField] GameObject prefabEnemy2;
+    [SerializeField] Transform enemySpawner;
     [SerializeField] float spawnDelay;
-    [SerializeField] int limitSpawned;
-    private int n = 0;
-    // Start is called before the first frame update
-    void Start()
+    private int limitSpawned;
+    private bool isSpawning = true;
+    private int random;
+    private int n;
+    private void Start()
     {
-        //Invocar el método toSpawn(), en el segundo 0 en que se instacia el objeto en un intervalo entre spawn y spawn de spawnDelay segundos
-        InvokeRepeating("toSpawn", 0, spawnDelay);
+        StartCoroutine("SpawnEnemies");
     }
-    
-    private void toSpawn()
+    private void Update()
     {
-        if (n >= limitSpawned)
+        random = Random.Range(0, 2);
+        limitSpawned = 1 * GameManager.waveNumber;
+        if(n >= limitSpawned)
         {
-            CancelInvoke();
+            isSpawning = false;
         }
-        n++;
-        Instantiate(prefabSpawned, transform);
-        transform.DetachChildren();
+    }
+    IEnumerator SpawnEnemies()
+    {
+        while (true)
+        {
+            if (isSpawning && random == 0)
+            {
+                Instantiate(prefabEnemy1, enemySpawner.position, enemySpawner.rotation);
+                n++;
+            }
+            else if (isSpawning && random == 1)
+            {
+                Instantiate(prefabEnemy2, enemySpawner.position, enemySpawner.rotation);
+                n++;
+            }
+            yield return new WaitForSeconds(spawnDelay);
+        }
+    }
+    public void Restart()
+    {
+        isSpawning = true;
+        n = 0;
     }
 }

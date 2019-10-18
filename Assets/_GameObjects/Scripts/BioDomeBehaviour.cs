@@ -20,19 +20,26 @@ public class BioDomeBehaviour : MonoBehaviour
         if (GameManager.isInside)
         {
             Physics.gravity = new Vector3(0, -9.8f, 0);
-        }else if(GameManager.isInside == false)
+        }
+        else if (GameManager.isInside == false)
         {
             Physics.gravity = new Vector3(0, -4.4f, 0);
         }
         bioDomeHpText.text = bioDomeHp.ToString() + "/100";
+
+        if (bioDomeHp <= 0)
+        {
+            gameObject.active = false; 
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name == "Player")
+        if (other.name == "Player")
         {
             GameManager.isInside = !GameManager.isInside;
-        } else if (other.tag == "Enemy")
+        }
+        else if (other.tag == "Enemy")
         {
             enemiesInside += 1;
             other.GetComponent<MobileEnemy>().ToStop();
@@ -45,7 +52,7 @@ public class BioDomeBehaviour : MonoBehaviour
         if (other.name == "Player")
         {
             GameManager.isInside = !GameManager.isInside;
-        } 
+        }
     }
     public void OneLessEnemy()
     {
@@ -55,5 +62,4 @@ public class BioDomeBehaviour : MonoBehaviour
     {
         bioDomeHp -= enemiesInside;
     }
-
 }

@@ -8,7 +8,7 @@ public class Player1 : MonoBehaviour
     [SerializeField] Gun[] guns;
     [SerializeField] int activeGun = 0;
     private bool keyDown;
-    [SerializeField] int playerHp = 100;
+    public int playerHp = 100;
     [SerializeField] Text hpText;
 
     private void Update()
@@ -37,8 +37,6 @@ public class Player1 : MonoBehaviour
         {
             ChangeGun(3);
         }*/
-
-        Death();
     }
 
     public void ToRecharge()
@@ -73,12 +71,5 @@ public class Player1 : MonoBehaviour
             //Activa el arma elegida
             guns[activeGun].gameObject.SetActive(true);
         }        
-    }
-    private void Death()
-    {
-        if(playerHp <= 0)
-        {
-            GameObject.Find("GameManager").GetComponent<GameManager>().DeathEvent();
-        }
     }
 }
