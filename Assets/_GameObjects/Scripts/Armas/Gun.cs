@@ -36,7 +36,7 @@ public abstract class Gun : MonoBehaviour
         charging = false;
         waitingCadence = false;
     }
-    private void Update()
+    public void Update()
     {
         chargerTxt.text = chargersLeft.ToString();
         ammoTxt.text = ammoLeft.ToString();

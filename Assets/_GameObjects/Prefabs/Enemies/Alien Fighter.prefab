@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2728119041139838661}
   - component: {fileID: 7389606690636573248}
-  - component: {fileID: 3207779280200262788}
   m_Layer: 0
   m_Name: Alien Fighter
   m_TagString: EnemySpawner
@@ -51,24 +50,6 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
---- !u!114 &3207779280200262788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2342656524914523122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09f3ca9f353e41741b0606df9afe600e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabEnemy1: {fileID: 4362495500527774030, guid: 0988894eb7dcde9479606414e077b0f4,
-    type: 3}
-  prefabEnemy2: {fileID: 33348204315714060, guid: f39b617d6e35ef44282ba92a67d7aa00,
-    type: 3}
-  enemySpawner: {fileID: 7318659940243671259}
-  spawnDelay: 1
 --- !u!64 &8954539272363449514
 MeshCollider:
   m_ObjectHideFlags: 0

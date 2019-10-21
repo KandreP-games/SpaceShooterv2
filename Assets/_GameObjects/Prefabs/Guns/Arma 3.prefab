@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7815493149872600932}
   - component: {fileID: 9050367725157805930}
-  - component: {fileID: 8228267906781336626}
+  - component: {fileID: 4719571477991308758}
   m_Layer: 0
   m_Name: Arma 3
   m_TagString: Untagged
@@ -160,7 +160,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8228267906781336626
+--- !u!114 &4719571477991308758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,20 +169,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 7815493149872600935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e17e0306492bde04382cf62fe21489e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 573954f8e594c79439995bf72d5aa311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cadence: 2
+  cadence: 3
   rechargeTime: 3
   chargerCapacity: 5
   chargersLeft: 5
   ammoLeft: 0
-  acShoot: {fileID: 8300000, guid: 1dc0bb376be50ae4cb60a2355b7ea791, type: 3}
-  acRecharge: {fileID: 8300000, guid: 9c892c53fe77588409babb00d58da413, type: 3}
-  acFail: {fileID: 8300000, guid: 26966e280a05fea46b6b80b07a7dab79, type: 3}
+  acShoot: {fileID: 8300000, guid: 9b312cab7ab754541892fa0dd5e0054f, type: 3}
+  acRecharge: {fileID: 8300000, guid: 42f498d2ab5c1d14c8ba27c3eb605243, type: 3}
+  acFail: {fileID: 8300000, guid: 6aa16e35ac2197b4f875ca5fec6923c3, type: 3}
+  ammoTxt: {fileID: 0}
+  chargerTxt: {fileID: 0}
   charging: 0
   waitingCadence: 0
+  powerUp: 0
+  puntoDisparo: {fileID: 5489471343586554346}
+  prefabMarca: {fileID: 5353011266559589066, guid: b54bccb1b51f76644982f46f4f3ea094,
+    type: 3}
   mainCamera: {fileID: 0}
+  damage: 75
 --- !u!1001 &7815493150861232148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190,6 +197,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7815493149872600932}
     m_Modifications:
+    - target: {fileID: 6022380644257832876, guid: 049fbab0c2d0a4341b6a07d48e43e3dc,
+        type: 3}
+      propertyPath: m_Name
+      value: Rifle
+      objectReference: {fileID: 0}
     - target: {fileID: 6896340531019792280, guid: 049fbab0c2d0a4341b6a07d48e43e3dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -244,11 +256,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6022380644257832876, guid: 049fbab0c2d0a4341b6a07d48e43e3dc,
-        type: 3}
-      propertyPath: m_Name
-      value: Rifle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 049fbab0c2d0a4341b6a07d48e43e3dc, type: 3}

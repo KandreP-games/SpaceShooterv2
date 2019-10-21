@@ -10,16 +10,12 @@ public class Enemies : MonoBehaviour
     [SerializeField] float delay;
     public static bool powerUpEffect = false;
 
-    protected GameObject player;
-
-    protected enum ESTADO { Normal, Siguiendo};
-    protected ESTADO estado = ESTADO.Normal;
 
 
     protected void Start()
     {
         hpText.text = hp.ToString() + "/100";
-        player = GameObject.FindGameObjectWithTag("Player");
+        
     }
     protected void Update()
     {
@@ -68,5 +64,15 @@ public class Enemies : MonoBehaviour
         }
         
     }
-
+    public void GrenadeDamage(float time, int damage, int force)
+    {
+        StartCoroutine(TakeGrenadeDamage(time, damage, force));
+    }
+    IEnumerator TakeGrenadeDamage(float time, int damage, int force)
+    {
+        yield return new WaitForSeconds(time);
+        ToTakeDamage(damage);
+        GetComponent<Rigidbody>().AddForce(new Vector3(1, 1, 1) * force);
+        yield return null;
+    }
 }

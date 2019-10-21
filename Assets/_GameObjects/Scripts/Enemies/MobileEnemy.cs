@@ -5,39 +5,31 @@ using UnityEngine;
 public class MobileEnemy : Enemies
 {
     [SerializeField] float speed;
-    [SerializeField] float timeBetweenRotation;
     [SerializeField] protected int damage;
     private bool isMoving = true;
-    private bool isInsideDome = false;
+    
     protected GameObject touchingDome;
-    private void Start()
-    {
-        base.Start();
-        Invoke("ToRotate", timeBetweenRotation);
-    }
+    protected Vector3 target;
+
+
     protected void Update()
     {
         base.Update();
         if (isMoving)
         {
             ToMove();
+            LookAtTarget();
         }
-        if(touchingDome == null)
-        {
-            GetComponent<Rigidbody>().isKinematic = false;
-            isMoving = true;
-        }
+        
     }
-    protected void ToMove()
+    protected void LookAtTarget()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
-    }   
-    protected void ToRotate()
+        transform.LookAt(target);
+
+    }
+    private void ToMove()
     {
-        if (estado != ESTADO.Siguiendo)
-        {
-            transform.Rotate(0, Random.Range(0, 360), 0);
-        }
+        transform.position += transform.forward * speed * Time.deltaTime;
     }
     public void ToStop()
     {
@@ -51,20 +43,5 @@ public class MobileEnemy : Enemies
             collision.gameObject.GetComponent<Player1>().ChangeLife(damage);
         }
     }
-    public void ChangeDomeStatus()
-    {
-        isInsideDome = !isInsideDome;
-        GetComponent<Rigidbody>().isKinematic = true;
-    }
-    public void ReferenceDome(GameObject gameObject)
-    {
-        touchingDome = gameObject;
-    }
-    private void OnDestroy()
-    {
-        if (isInsideDome)
-        {
-            touchingDome.GetComponent<BioDomeBehaviour>().OneLessEnemy();
-        }
-    }
+   
 }

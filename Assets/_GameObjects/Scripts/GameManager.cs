@@ -6,24 +6,21 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static bool isInside;
-    private int numberEnemies;
-    public static int  waveNumber = 1;
     private GameObject player;
     private int bioDomes;
-    private GameObject[] spawners;
+
+
     private void Start()
     {
-        numberEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
         GameManager.isInside = false;
         player = GameObject.FindGameObjectWithTag("Player");
         bioDomes = GameObject.FindGameObjectsWithTag("EnemyObjective").Length;
-        spawners = GameObject.FindGameObjectsWithTag("EnemySpawner");
+        StartCoroutine(FindEnemiesInScene());
     }
 
     private void Update()
     {
-        StartCoroutine("Counter");
-        if(player.GetComponent<Player1>().playerHp <= 0)
+        if (player.GetComponent<Player1>().playerHp <= 0)
         {
             //DeathEvent();
             print("PlayerDeath");
@@ -37,23 +34,11 @@ public class GameManager : MonoBehaviour
         
     }
 
-    IEnumerator Counter()
+    IEnumerator FindEnemiesInScene()
     {
-        numberEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        bioDomes = GameObject.FindGameObjectsWithTag("EnemyObjective").Length;
-        while (numberEnemies <= 0)
-        {
-                waveNumber += 1;
-                print("New Wave");
-                for (int j = 0; j < spawners.Length; j++)
-                {
-                    spawners[j].GetComponent<Spawner>().Restart();
-                }
-        }
         
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
     }
-
     public void DeathEvent()
     {
         SceneManager.LoadScene(2);
