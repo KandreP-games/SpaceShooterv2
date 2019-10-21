@@ -16,12 +16,12 @@ public class WaveSpawner : MonoBehaviour
     }
 
     [SerializeField] Wave[] waves;
-    private int nextWave = 0;
+    public int nextWave = 0;
     public float timeBetweenWaves = 5f;
     public float waveCountDown;
 
     public float searchCountDown = 1f;
-    private SpawnState state = SpawnState.counting;
+    public SpawnState state = SpawnState.counting;
     
     private void Start()
     {

@@ -293,7 +293,6 @@ MonoBehaviour:
   hpText: {fileID: 7408038340606939496}
   delay: 2
   speed: 7
-  timeBetweenRotation: 2
   damage: -20
   followDistance: 10
 --- !u!1 &33348204315714062
@@ -10978,7 +10977,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2844732233547008258}
-  m_Text: '100
+  m_Text: '100/100
 
 '
   m_OffsetZ: 0

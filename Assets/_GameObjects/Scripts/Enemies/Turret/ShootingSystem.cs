@@ -10,6 +10,8 @@ public class ShootingSystem : MonoBehaviour
     [SerializeField] float force;
     [SerializeField] Transform bulletSpawn;
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] AudioSource aSource;
+    [SerializeField] AudioClip audioClip;
     void Start()
     {
         target = GameObject.Find("Player");
@@ -37,6 +39,7 @@ public class ShootingSystem : MonoBehaviour
     }
     private void Shoot()
     {
+        aSource.PlayOneShot(audioClip);
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * force);
     }
